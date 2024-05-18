@@ -1,2 +1,3 @@
 require("sholtor.remap")
-require("sholtor.lazy")
+require("sholtor.set")
+require("sholtor.lazy_init")
