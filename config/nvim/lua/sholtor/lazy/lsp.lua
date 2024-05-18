@@ -27,7 +27,6 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'ansiblels',
-        'arudino_language_server',
         'bashls',
         'clangd',
         'cssls',
