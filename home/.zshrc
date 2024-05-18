@@ -12,4 +12,5 @@ eval "$(starship init zsh)"
 
 export BROWSER=wslview
 export XDG_CONFIG_HOME=~/.config/
+export XDG_DATA_HOME=~/.config/nvim-data/
 export STARSHIP_CONFIG=~/.config/starship.toml
