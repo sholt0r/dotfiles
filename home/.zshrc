@@ -17,3 +17,5 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 
 export GOROOT=/usr/local/bin/go
 export PATH=$PATH:/usr/local/bin/go/bin:~/.local/bin
+
+alias ls='ls -la'
