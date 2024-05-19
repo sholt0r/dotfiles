@@ -70,6 +70,26 @@ return {
             }
           }
         end,
+
+        ['yamlls'] = function()
+          local lspconfig = require('lspconfig')
+          lspconfig.yamlls.setup {
+            capabilities = capabilities,
+            settings = {
+              yaml = {
+                validate = true,
+                schemaStore = {
+                  enable = false,
+                  url = "",
+                },
+                schemas = {
+                  ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook'] = 'playbook.{yml,yaml}',
+                  ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks'] = 'tasks.{yml,yaml}',
+                }
+              }
+            }
+          }
+        end,
       }
     })
 
