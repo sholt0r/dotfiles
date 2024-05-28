@@ -13,7 +13,6 @@ eval "$(starship init zsh)"
 export BROWSER=wslview
 export XDG_CONFIG_HOME=~/.config/
 export XDG_DATA_HOME=~/.config/nvim-data/
-export STARSHIP_CONFIG=~/.config/starship.toml
 
 export GOROOT=/usr/local/bin/go
 export PATH=$PATH:/usr/local/bin/go/bin:~/.local/bin
