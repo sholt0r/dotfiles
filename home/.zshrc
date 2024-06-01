@@ -17,4 +17,4 @@ export XDG_DATA_HOME=~/.config/nvim-data/
 export GOROOT=/usr/local/bin/go
 export PATH=$PATH:/usr/local/bin/go/bin:~/.local/bin
 
-alias ls='ls -la'
+alias ls='eza -la'
