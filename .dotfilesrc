@@ -1,0 +1,11 @@
+[dotfiles]
+repository = ~/.dotfiles
+packages = ['config']
+prefix = .
+ignore = [
+    '.git',
+    '.gitignore',
+    '*.swp',
+    'README.md',
+    'win-profile',
+    '.dotfilesrc']
