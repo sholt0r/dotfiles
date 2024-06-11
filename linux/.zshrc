@@ -1,4 +1,4 @@
-HISTFILE=~/.histfile
+HISTFILE='~/.local/.zsh_histfile'
 HISTSIZE=100000
 SAVEHIST=100000
 setopt autocd
@@ -14,6 +14,7 @@ export BROWSER=wslview
 export XDG_CONFIG_HOME=~/.config/
 export XDG_DATA_HOME=~/.config/nvim-data/
 
+export GIT_CONFIG_GLOBAL=~/.config/git_global_config
 export GOROOT=/usr/local/bin/go
 export PATH=$PATH:/usr/local/bin/go/bin:~/.local/bin
 
