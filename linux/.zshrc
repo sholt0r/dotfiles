@@ -17,4 +17,5 @@ export XDG_DATA_HOME=~/.config/nvim-data/
 export GIT_CONFIG_GLOBAL=~/.config/git_global_config
 export PATH=$PATH:~/.local/bin
 
-alias ls='eza -la'
+alias ls='eza'
+alias nixos-rebuild='sudo nixos-rebuild'
