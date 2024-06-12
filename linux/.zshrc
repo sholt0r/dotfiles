@@ -1,4 +1,4 @@
-HISTFILE='~/.local/.zsh_histfile'
+HISTFILE=~/.local/.zsh_histfile
 HISTSIZE=100000
 SAVEHIST=100000
 setopt autocd
@@ -12,7 +12,7 @@ eval "$(starship init zsh)"
 
 export BROWSER=wslview
 export XDG_CONFIG_HOME=~/.config/
-export XDG_DATA_HOME=~/.config/nvim-data/
+export XDG_DATA_HOME=~/.local/data/
 
 export GIT_CONFIG_GLOBAL=~/.config/git_global_config
 export PATH=$PATH:~/.local/bin
