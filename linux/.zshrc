@@ -18,4 +18,7 @@ export GIT_CONFIG_GLOBAL=~/.config/git_global_config
 export PATH=$PATH:~/.local/bin
 
 alias ls='eza'
+<<<<<<< HEAD
 alias nixos-rebuild='sudo nixos-rebuild'
+=======
+>>>>>>> ce6e2f4 (Updated ls alias)
