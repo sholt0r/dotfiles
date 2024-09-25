@@ -1,0 +1,3 @@
+[submodule "linux/.config/nvim"]
+	path = linux/.config/nvim
+	url = ssh://git@github.com/sholt0r/nvim
