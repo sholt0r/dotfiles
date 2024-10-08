@@ -1,3 +1,6 @@
 [submodule "linux/.config/nvim"]
 	path = linux/.config/nvim
 	url = ssh://git@github.com/sholt0r/nvim
+[submodule "mac/.config/nvim"]
+	path = mac/.config/nvim
+	url = https://github.com/sholt0r/nvim
