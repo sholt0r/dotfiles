@@ -1,7 +1,0 @@
-[user]
-	name = sholt0r
-	email = sholtor@kobu.au
-[init]
-	defaultBranch = main
-[core]
-	editor = nvim
