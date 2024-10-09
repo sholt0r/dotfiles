@@ -1,0 +1,8 @@
+: 1728505339:0;nvim nix/system/brew.nix
+: 1728505382:0;cd nix
+: 1728505384:0;git add .
+: 1728505392:1;git commit -am "Added magnet to masApps"
+: 1728505394:5;git push
+: 1728505400:0;cd ..
+: 1728505402:0;git add .
+: 1728505410:0;git commit -am "Modified nix"
