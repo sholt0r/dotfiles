@@ -4,3 +4,6 @@
 [submodule "mac/.config/nvim"]
 	path = mac/.config/nvim
 	url = https://github.com/sholt0r/nvim
+[submodule "mac/.config/nix"]
+	path = mac/.config/nix
+	url = http://github.com/sholt0r/nix
