@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$nodejs$php$java$kotlin$haskell$python$docker_context$conda$character"
+format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$nodejs$php$java$kotlin$haskell$python$docker_context$kubernetes$conda$character"
 palette = "sholtor_dark"
 
 [c]
@@ -9,11 +9,11 @@ symbol = " "
 
 [character]
 disabled = false
-error_symbol = "[❯](fg:red)"
 success_symbol = "[❯](fg:green)"
+error_symbol = "[❯](fg:red)"
+vimcmd_symbol = "[❮](fg:green)"
 vimcmd_replace_one_symbol = "[❮](fg:purple)"
 vimcmd_replace_symbol = "[❮](fg:purple)"
-vimcmd_symbol = "[❮](fg:green)"
 vimcmd_visual_symbol = "[❮](fg:yellow)"
 
 [conda]
@@ -123,26 +123,26 @@ Windows = "󰍲 "
 openSUSE = " "
 
 [palettes.sholtor_dark]
-colour_aqua = "#689d6a"
 colour_bg0 = "#424242"
-colour_blue = "#458588"
 colour_fg0 = "#ffffff"
 colour_fg1 = "#E64747"
+colour_ubuntu = "#EB6536"
+colour_ssh = "#43CCEA"
 colour_folder = "#3EC669"
+colour_lblue = "#43CCEA"
+colour_python = "#E4F34A"
 colour_go = "#7FD5EA"
-colour_green = "#98971a"
+colour_node = "#42E66C"
+colour_ruby = "#E64747"
 colour_java = "#E64747"
 colour_julia = "#9B6BDF"
-colour_lblue = "#43CCEA"
-colour_node = "#42E66C"
-colour_orange = "#d65d0e"
 colour_php = "#4063D9"
+colour_blue = "#458588"
+colour_aqua = "#689d6a"
+colour_green = "#98971a"
+colour_orange = "#d65d0e"
 colour_purple = "#b16286"
-colour_python = "#E4F34A"
 colour_red = "#cc241d"
-colour_ruby = "#E64747"
-colour_ssh = "#43CCEA"
-colour_ubuntu = "#EB6536"
 colour_yellow = "#d79921"
 
 [php]

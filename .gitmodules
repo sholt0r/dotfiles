@@ -7,3 +7,6 @@
 [submodule "linux/.config/nvim"]
 	path = linux/.config/nvim
 	url = ssh://git@github.com/sholt0r/nvim
+[submodule "linux/.config/fish"]
+	path = linux/.config/fish
+	url = ssh://git@github.com/sholt0r/fish
