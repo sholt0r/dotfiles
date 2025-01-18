@@ -1,0 +1,51 @@
+[general]
+live_config_reload = true
+
+[terminal]
+shell = "/opt/homebrew/bin/fish"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+startup_mode = "Windowed"
+decorations = "Buttonless"
+dynamic_padding = true
+opacity = 0.88
+blur = true
+padding = { x = 10, y = 10 }
+
+[font]
+size = 16.0
+offset = { x = 1, y = 1 }
+normal = { family = "GeistMono Nerd Font Mono" }
+bold = { family = "GeistMono Nerd Font Mono" }
+italic = { family = "GeistMono Nerd Font Mono" }
+bold_italic = { family = "GeistMono Nerd Font Mono" }
+
+[colors]
+transparent_background_colors = true
+primary = { background = "0x282b33", foreground = "0xc5cfdf" }
+
+[colors.normal]
+black =   "0x3f4350"
+red =     "0xdf5460"
+green =   "0xa4e174"
+yellow =  "0xd08f51"
+blue =    "0x51adf8"
+magenta = "0xcb7ed9"
+cyan =    "0x5ecddd"
+white =   "0xbabfc9"
+
+[colors.bright]
+black =   "0x707681"
+red =     "0xde5460"
+green =   "0xa3e174"
+yellow =  "0xd08f51"
+blue =    "0x51adf8"
+magenta = "0xcb7ed9"
+cyan =    "0x5ecddc"
+white =   "0xfefefe"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }

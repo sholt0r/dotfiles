@@ -1,0 +1,13 @@
+[user]
+	name = sholt0r
+	email = sholtor@kobu.au
+	signingkey = /Users/jstaples/.ssh/MBA-A.pub
+[credential]
+	store = keychain
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://git.kobu.au"]
+	provider = generic
+[gpg]
+	format = ssh
