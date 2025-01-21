@@ -10,3 +10,6 @@
 [submodule "linux/.config/fish"]
 	path = linux/.config/fish
 	url = ssh://git@github.com/sholt0r/fish
+[submodule "mac/.config/fish"]
+	path = mac/.config/fish
+	url = ssh://git@github.com/sholt0r/fish
