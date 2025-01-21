@@ -2,6 +2,6 @@
 	name = sholt0r
 	email = sholtor@kobu.au
 [init]
-	defaultBranch = main
+	defaultBranch = master
 [core]
 	editor = nvim
