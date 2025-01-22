@@ -10,9 +10,11 @@
 [submodule "linux/.config/fish"]
 	path = linux/.config/fish
 	url = ssh://git@github.com/sholt0r/fish
+  branch = linux
 [submodule "mac/.config/nvim"]
 	path = mac/.config/nvim
 	url = ssh://git@github.com/sholt0r/nvim
 [submodule "mac/.config/fish"]
 	path = mac/.config/fish
 	url = ssh://git@github.com/sholt0r/fish
+  branch = mac
