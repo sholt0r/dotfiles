@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo zypper install stow rustup npm neovim fish unzip zoxide fzf git gh jq whois go eza starship gcc-c++ zed
+sudo zypper install stow rustup npm neovim fish unzip zoxide fzf git gh jq whois go eza starship gcc-c++ 
 
 rustup default stable
 chsh -s $(which fish) $USER
