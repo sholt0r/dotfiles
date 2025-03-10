@@ -2,7 +2,8 @@
 live_config_reload = true
 
 [terminal]
-shell = "/opt/homebrew/bin/tmux"
+#shell = { program="/opt/homebrew/bin/fish", args=["-l","-c","tmux attach || tmux"] }
+shell = "/opt/homebrew/bin/fish"
 
 [env]
 TERM = "xterm-256color"

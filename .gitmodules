@@ -1,20 +1,20 @@
 [submodule "nix/.config/nvim"]
 	path = nix/.config/nvim
-	url = ssh://git@github.com/sholt0r/nvim
+	url = https://github.com/sholt0r/nvim
 [submodule "nix/.config/nix"]
 	path = nix/.config/nix
-	url = ssh://git@github.com/sholt0r/nix
+	url = https://github.com/sholt0r/nix
 [submodule "linux/.config/nvim"]
 	path = linux/.config/nvim
-	url = ssh://git@github.com/sholt0r/nvim
+	url = https://github.com/sholt0r/nvim
 [submodule "linux/.config/fish"]
 	path = linux/.config/fish
-	url = ssh://git@github.com/sholt0r/fish
-	branch = linux
+	url = https://github.com/sholt0r/fish
+  branch = linux
 [submodule "mac/.config/nvim"]
 	path = mac/.config/nvim
-	url = ssh://git@github.com/sholt0r/nvim
+	url = https://github.com/sholt0r/nvim
 [submodule "mac/.config/fish"]
 	path = mac/.config/fish
-	url = ssh://git@github.com/sholt0r/fish
-	branch = mac
+	url = https://github.com/sholt0r/fish
+  branch = mac
