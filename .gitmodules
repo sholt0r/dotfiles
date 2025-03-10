@@ -11,6 +11,13 @@
 	path = linux/.config/fish
 	url = https://github.com/sholt0r/fish
   branch = linux
+[submodule "docker/.config/nvim"]
+	path = docker/.config/nvim
+	url = https://github.com/sholt0r/nvim
+[submodule "docker/.config/fish"]
+	path = docker/.config/fish
+	url = https://github.com/sholt0r/fish
+  branch = docker
 [submodule "mac/.config/nvim"]
 	path = mac/.config/nvim
 	url = https://github.com/sholt0r/nvim
