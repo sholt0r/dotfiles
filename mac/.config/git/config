@@ -10,8 +10,12 @@
 [credential "https://git.kobu.au"]
 	provider = generic
 [commit]
-  gpgsign = false
+	gpgSign = true
 [tag]
   gpgsign = false
 [gpg]
 	format = ssh
+[credential "https://git.s.kobu.au"]
+	provider = generic
+[gpg "ssh"]
+	program = ssh-keygen
