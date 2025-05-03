@@ -1,5 +1,5 @@
 add_newline = true
-format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$nodejs$php$java$kotlin$haskell$python$docker_context$conda$character"
+format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$nodejs$php$java$kotlin$haskell$python$docker_context$conda\n$character"
 palette = "sholtor_dark"
 
 [c]
