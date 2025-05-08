@@ -12,6 +12,9 @@ case "$OS_TYPE" in
   linux)  source ~/.config/zsh/hosts/os-linux.zsh ;;
 esac
 
+# Load common config
+source "$HOME/.config/zsh/hosts/common.zsh"
+
 # Load host-specific config
 HOST="$(hostname -s)"
 HOST_CONFIG="$HOME/.config/zsh/hosts/${HOST}.zsh"

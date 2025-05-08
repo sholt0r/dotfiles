@@ -1,14 +1,3 @@
-ZSH_PLUGINS=(
-  git
-  zoxide
-  autosuggestions
-  syntax
-  ssh-agent
-  fzf
-  starship
-)
-
-export EDITOR=nvim
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin/java"
 
 # >>> conda initialize >>>
