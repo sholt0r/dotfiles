@@ -1,0 +1,20 @@
+window {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+
+#entry {
+  background-color: #3f4451;
+  color: #abb2bf;
+}
+
+#entry:selected {
+  background-color: #61afef;
+  color: #282c34;
+}
+
+#input {
+  background-color: #21252b;
+  color: #abb2bf;
+}
+

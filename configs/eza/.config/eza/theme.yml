@@ -1,0 +1,47 @@
+meta:
+  name: "one-dark-pro"
+  author: "sholt0r"
+
+palette:
+  bg: "#282c34"
+  fg: "#abb2bf"
+  blue: "#61afef"
+  green: "#98c379"
+  red: "#e06c75"
+  yellow: "#e5c07b"
+  purple: "#c678dd"
+  cyan: "#56b6c2"
+  gray: "#5c6370"
+  white: "#ffffff"
+  orange: "#d19a66"
+
+filetype:
+  directory: "blue bold"
+  symlink: "cyan"
+  executable: "green"
+  device: "orange"
+  fifo: "yellow"
+  socket: "purple"
+  block-device: "blue"
+  char-device: "purple"
+  broken: "red italic"
+
+git:
+  new: "green"
+  modified: "yellow"
+  deleted: "red"
+  renamed: "blue"
+  type: "purple"
+
+permissions:
+  read: "green"
+  write: "yellow"
+  exec: "red"
+  no-access: "gray"
+
+accent:
+  date: "gray"
+  size: "orange"
+  inode: "purple"
+  links: "gray"
+

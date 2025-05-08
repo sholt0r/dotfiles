@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -e
+
+[[ "$BOOTSTRAP_DEBUG" == true ]] && set -x
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BOOTSTRAP_DIR="$SCRIPT_DIR/bootstraps"
+DRY_RUN=false
+
+# Check for --dry-run flag
+if [[ "$1" == "--dry-run" ]]; then
+  DRY_RUN=true
+  shift
+fi
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 [--dry-run] <target>"
+  echo "Available targets:"
+  find "$BOOTSTRAP_DIR" -type f -exec basename {} \;
+  exit 1
+fi
+
+for TARGET in "$@"; do
+  SCRIPT="$BOOTSTRAP_DIR/$TARGET"
+
+  if [[ ! -x "$SCRIPT" ]]; then
+    echo "Error: No executable bootstrap script found for '$TARGET'"
+    continue
+  fi
+
+  echo "Running bootstrap for '$TARGET'..."
+  if $DRY_RUN; then
+    echo "[Dry Run] Would execute: $SCRIPT"
+    sed -n '/^\s*#/!p' "$SCRIPT"
+  else
+    "$SCRIPT"
+  fi
+done

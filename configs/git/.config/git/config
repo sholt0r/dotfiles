@@ -1,0 +1,11 @@
+[user]
+	name = sholt0r
+	email = sholtor@kobu.au
+[init]
+	defaultBranch = main
+
+[includeIf "hostname:conqueror"]
+  path = /home/jstaples/.config/git/config-conqueror
+
+[includeIf "hostname:oblivion"]
+  path = /Users/jstaples/.config/git/config-oblivion

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install jq starship stow tldr tmux zsh brimdata/tap/zq 
+brew install --cask alacritty db-browser-for-sqlite discord displaylink brimdata/tap/zed zen-browser 
+
+chsh -s /opt/homebrew/bin/zsh $USER
