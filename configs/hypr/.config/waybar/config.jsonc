@@ -45,9 +45,8 @@
   },
 
   "network": {
-    "interface": "Client@enp4s0",
+    "interface": "Client",
     "format-ethernet": "󰈀 ",
-    "interval": 5,
     "interval": 5
   },
 

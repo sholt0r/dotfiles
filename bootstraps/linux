@@ -2,4 +2,4 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install jq starship stow tldr tmux zsh eza zoxide
+install jq starship stow zsh eza zoxide

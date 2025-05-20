@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 return {
   -- General
-  enable_wayland = true,
+  enable_wayland = false,
   enable_scroll_bar = false,
   check_for_updates = false,
   automatically_reload_config = true,
@@ -25,29 +25,29 @@ return {
 
   -- Font
   font = wezterm.font_with_fallback({
-    { family = "GeistMono Nerd Font Mono", weight = "Regular" },
+    { family = "GeistMono Nerd Font", weight = "Regular" },
   }),
   font_size = 16.0,
   font_rules = {
     {
       intensity = "Bold",
       italic = false,
-      font = wezterm.font("GeistMono Nerd Font Mono", { weight = "Bold" }),
+      font = wezterm.font("GeistMono Nerd Font", { weight = "Bold" }),
     },
     {
       intensity = "Half",
       italic = false,
-      font = wezterm.font("GeistMono Nerd Font Mono", { weight = "DemiBold" }),
+      font = wezterm.font("GeistMono Nerd Font", { weight = "DemiBold" }),
     },
     {
       intensity = "Normal",
       italic = true,
-      font = wezterm.font("GeistMono Nerd Font Mono", { italic = true }),
+      font = wezterm.font("GeistMono Nerd Font", { italic = true }),
     },
     {
       intensity = "Bold",
       italic = true,
-      font = wezterm.font("GeistMono Nerd Font Mono", { weight = "Bold", italic = true }),
+      font = wezterm.font("GeistMono Nerd Font", { weight = "Bold", italic = true }),
     },
   },
   keys = {
