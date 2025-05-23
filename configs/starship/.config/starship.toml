@@ -54,7 +54,7 @@ symbol = ""
 [hostname]
 format = "[@$hostname$ssh_symbol]($style)"
 ssh_only = false
-ssh_symbol = ":"
+ssh_symbol = ": "
 style = "fg:cyan"
 trim_at = "."
 
