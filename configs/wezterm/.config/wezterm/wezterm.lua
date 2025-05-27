@@ -1,3 +1,5 @@
+require("config.style")
+
 local wezterm = require 'wezterm'
 
 return {
@@ -9,7 +11,7 @@ return {
 
   -- Window
   window_decorations = "NONE", -- closest match to 'Buttonless'
-  hide_tab_bar_if_only_one_tab = true,
+  hide_tab_bar_if_only_one_tab = false,
   tab_bar_at_bottom = true,
   window_background_opacity = 0.95,
   macos_window_background_blur = 30,

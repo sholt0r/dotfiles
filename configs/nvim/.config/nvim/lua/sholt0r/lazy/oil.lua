@@ -22,5 +22,16 @@ return {
     })
 
     vim.keymap.set("n", "<leader>pv", vim.cmd.Oil, { desc = "Open parent directory"})
+
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "OilEnter",
+      callback = function(args)
+        local oil_dir = vim.api.nvim_buf_get_name(args.buf)
+        local fs_path = oil_dir:gsub('^oil://', ''):gsub('/$', '')
+        if vim.fn.isdirectory(fs_path) == 1 then
+          vim.cmd("cd " .. vim.fn.fnameescape(fs_path))
+        end
+      end,
+    })
   end
 }

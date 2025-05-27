@@ -24,6 +24,53 @@ return {
 
     require('fidget').setup({})
     require('mason').setup()
+
+    local server_settings = {
+      lua_ls = {
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            runtime = {
+              version = 'LuaJIT',
+              path = vim.split(package.path, ';'),
+            },
+            diagnostics = {
+              globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
+              filetypes = { 'lua', 'nse' }
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file('', true),
+              checkThirdParty = false,
+            },
+            completion = {
+              callSnippet = 'Replace',
+            },
+            telemetry = {
+              enable = false,
+            },
+          }
+        }
+      },
+
+      yamlls = {
+        capabilities = capabilities,
+        settings = {
+          yaml = {
+            validate = true,
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = {
+              ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook'] = 'playbook.{yml,yaml}',
+              ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks'] = 'tasks.{yml,yaml}',
+            }
+          }
+        }
+      },
+    }
+
+
     require('mason-lspconfig').setup({
       ensure_installed = {
         'ansiblels',
@@ -51,48 +98,14 @@ return {
       },
       handlers = {
         function(server_name) -- default handler (optional)
-
-          require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-          }
+          require('lspconfig')[server_name].setup(vim.tbl_deep_extend(
+            'force',
+            {
+              capabilities = capabilities,
+            },
+            server_settings[server_name] or {}
+          ))
         end,
-
-        ['lua_ls'] = function()
-          local lspconfig = require('lspconfig')
-          lspconfig.lua_ls.setup {
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                runtime = { version = 'Lua 5.1' },
-                diagnostics = {
-                  globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
-                filetypes = { 'lua', 'nse' }
-                }
-              }
-            }
-          }
-        end,
-
-        ['yamlls'] = function()
-          local lspconfig = require('lspconfig')
-          lspconfig.yamlls.setup {
-            capabilities = capabilities,
-            settings = {
-              yaml = {
-                validate = true,
-                schemaStore = {
-                  enable = false,
-                  url = "",
-                },
-                schemas = {
-                  ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook'] = 'playbook.{yml,yaml}',
-                  ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks'] = 'tasks.{yml,yaml}',
-                }
-              }
-            }
-          }
-        end,
-
       }
     })
 
