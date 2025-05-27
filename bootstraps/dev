@@ -2,4 +2,4 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install ansible ansible-lint eza fzf go lua neovim nodejs npm rustup 
+install ansible ansible-lint eza fzf go lua neovim nodejs npm rustup unzip

@@ -10,7 +10,7 @@ return {
   automatically_reload_config = true,
 
   -- Window
-  window_decorations = "NONE", -- closest match to 'Buttonless'
+--  window_decorations = "NONE", -- closest match to 'Buttonless'
   hide_tab_bar_if_only_one_tab = false,
   tab_bar_at_bottom = true,
   window_background_opacity = 0.95,

@@ -2,4 +2,4 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install wezterm
+install discord steam
