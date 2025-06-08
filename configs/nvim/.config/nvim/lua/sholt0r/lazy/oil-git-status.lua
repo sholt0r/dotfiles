@@ -1,3 +1,5 @@
+return {}
+--[[
 return {
   'refractalize/oil-git-status.nvim',
   config = function()
@@ -5,3 +7,4 @@ return {
     oil_git_status.setup()
   end
 }
+]]--

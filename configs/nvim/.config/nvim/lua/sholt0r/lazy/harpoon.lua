@@ -5,7 +5,16 @@ return {
   config = function()
     local harpoon = require("harpoon")
 
-    harpoon:setup()
+    harpoon:setup({
+      settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+        exclude_buffers = function(bufnr)
+          local bufname = vim.api.nvim_buf_get_name(bufnr)
+          return bufname:match("^oil://")
+        end,
+      },
+    })
 
     vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
     vim.keymap.set("n", "<C-d>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)

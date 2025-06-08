@@ -32,3 +32,5 @@ done
   echo "[DEBUG] Plugins: ${ZSH_PLUGINS[*]}"
   type znap &>/dev/null && znap list
 }
+
+PATH=~/.console-ninja/.bin:$PATH

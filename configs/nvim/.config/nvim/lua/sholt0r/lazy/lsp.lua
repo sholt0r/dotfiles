@@ -52,6 +52,16 @@ return {
         }
       },
 
+      ts_ls = {
+        capabilities = capabilities,
+        root_dir = function(fname)
+            local util = require('lspconfig.util')
+            local root = util.root_pattern("tsconfig.json", "package.json")(fname)
+            return root
+        end,
+        cmd = { "typescript-language-server", "--stdio" },
+      },
+
       yamlls = {
         capabilities = capabilities,
         settings = {
@@ -142,6 +152,15 @@ return {
         header = '',
         prefix = '',
       },
+    })
+
+    local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.go",
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+      group = format_sync_grp
     })
   end
 }

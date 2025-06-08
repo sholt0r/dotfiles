@@ -22,4 +22,4 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
---vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'

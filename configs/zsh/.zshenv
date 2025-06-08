@@ -15,6 +15,7 @@ export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 [[ -d "/opt/homebrew/Caskroom/miniconda/base/bin" ]] && PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
 [[ -d "/opt/homebrew/Caskroom/miniconda/base/condabin" ]] && PATH="/opt/homebrew/Caskroom/miniconda/base/condabin:$PATH"
 [[ -d "/opt/homebrew/bin" ]] && PATH="/opt/homebrew/bin:$PATH"
+[[ -d "/home/linuxbrew/.linuxbrew/bin" ]] && PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 # Other
 [[ -d "/var/lib/flatpak/app" ]] && PATH="/var/lib/flatpak/app:$PATH"

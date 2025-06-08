@@ -1,5 +1,4 @@
-return {}
---[[
+--return {}
 return {
   'prichrd/netrw.nvim',
   config = function()
@@ -7,4 +6,3 @@ return {
     netrw.setup({})
   end
 }
-]]--
