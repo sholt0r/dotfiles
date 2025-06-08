@@ -1,4 +1,4 @@
 **/.DS_STORE
 *.zwc
 *.zwc.old
-**/gh/hosts.yaml
+configs/gh/.config/gh/hosts.yaml
