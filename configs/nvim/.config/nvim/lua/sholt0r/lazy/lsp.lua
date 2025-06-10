@@ -143,16 +143,13 @@ return {
     })
 
     vim.diagnostic.config({
-      -- update_in_insert = true,
-      float = {
-        focusable = false,
-        style = 'minimal',
-        border = 'rounded',
-        source = 'always',
-        header = '',
-        prefix = '',
+      update_in_insert = false,
+      virtual_lines = {
+        current_line = true,
       },
     })
+
+    vim.o.updatetime = 250
 
     local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
     vim.api.nvim_create_autocmd("BufWritePre", {
