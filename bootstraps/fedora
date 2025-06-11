@@ -2,4 +2,4 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install jq stow zsh eza zoxide
+install jq stow zsh eza zoxide ansible-core
