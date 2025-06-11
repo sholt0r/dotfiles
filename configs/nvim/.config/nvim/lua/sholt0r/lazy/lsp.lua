@@ -101,6 +101,7 @@ return {
         'rust_analyzer',
         'svelte',
         'taplo',
+        'terraformls',
         'ts_ls',
         'lemminx',
         'yamlls',
