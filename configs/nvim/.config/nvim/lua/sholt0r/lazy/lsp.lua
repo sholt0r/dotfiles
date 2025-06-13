@@ -10,6 +10,7 @@ return {
     'hrsh7th/nvim-cmp',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    { 'samiulsami/cmp-go-deep', dependencies = { 'kkharji/sqlite.lua' } },
     'j-hui/fidget.nvim',
   },
 
@@ -139,6 +140,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
       }, {
+        { name = 'go_deep'},
         { name = 'buffer' },
       })
     })
