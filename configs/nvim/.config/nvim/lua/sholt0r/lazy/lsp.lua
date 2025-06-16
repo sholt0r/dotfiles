@@ -10,6 +10,7 @@ return {
     'hrsh7th/nvim-cmp',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+		'rafamadriz/friendly-snippets',
     { 'samiulsami/cmp-go-deep', dependencies = { 'kkharji/sqlite.lua' } },
     'j-hui/fidget.nvim',
   },
@@ -25,6 +26,7 @@ return {
 
     require('fidget').setup({})
     require('mason').setup()
+		require('luasnip.loaders.from_vscode').lazy_load()
 
     local server_settings = {
       lua_ls = {
@@ -130,6 +132,10 @@ return {
           require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
       },
+			preselect = cmp.PreselectMode.Item,
+			completion = {
+				completeopt = 'menu,menuone,noinsert'
+			},
       mapping = cmp.mapping.preset.insert({
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
