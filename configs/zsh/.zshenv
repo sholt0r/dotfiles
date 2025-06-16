@@ -2,6 +2,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
+export PYENV_ROOT="$HOME/.pyenv"
 
 # Homdir
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
@@ -10,6 +11,7 @@ export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 [[ -d "$HOME/.local/share/nvim/mason/bin" ]] && PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 [[ -d "$HOME/go/bin" ]] && PATH="$HOME/go/bin:$PATH"
 [[ -d "$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin" ]] && PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH"
+[[ -d "$PYENV_ROOT/bin" ]] && PATH="$PYENV_ROOT/bin:$PATH"
 
 # Homebrew
 [[ -d "/opt/homebrew/Caskroom/miniconda/base/bin" ]] && PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"

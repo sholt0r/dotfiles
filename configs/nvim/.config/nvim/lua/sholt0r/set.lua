@@ -3,6 +3,10 @@ vim.opt.relativenumber = true
 
 vim.opt.wrap = false
 
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = false
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 if (vim.fn.has('unix') == 1) then

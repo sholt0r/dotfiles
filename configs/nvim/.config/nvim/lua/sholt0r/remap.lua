@@ -43,3 +43,11 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+vim.keymap.set("n", "<leader>rs", function()
+  local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+  for _, client in ipairs(clients) do
+    client.stop()
+  end
+  vim.cmd("edit")
+end, { desc = "Restart LSP for buffer" })

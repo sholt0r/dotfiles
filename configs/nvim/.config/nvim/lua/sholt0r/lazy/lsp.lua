@@ -162,5 +162,6 @@ return {
       end,
       group = format_sync_grp
     })
-  end
+
+  end -- Config end
 }
