@@ -9,6 +9,10 @@ return {
       settings = {
         save_on_toggle = true,
         sync_on_ui_close = true,
+				save_on_change = true,
+				key = function()
+					return vim.loop.cwd()
+				end,
         exclude_buffers = function(bufnr)
           local bufname = vim.api.nvim_buf_get_name(bufnr)
           return bufname:match("^oil://")

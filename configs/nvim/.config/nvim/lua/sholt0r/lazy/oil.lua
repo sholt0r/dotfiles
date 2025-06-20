@@ -22,20 +22,31 @@ return {
       watch_for_changes = true,
       view_options = {
         show_hidden = true,
-      }
+      },
+			keymaps = {
+        ["g?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        ["<C-s>"] = "actions.select_vsplit",
+        ["<C-v>"] = "actions.select_split",
+        ["<C-t>"] = "actions.select_tab",
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = "actions.close",
+        ["<C-r>"] = "actions.refresh",
+        ["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["~"] = "actions.tcd",
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["g."] = "actions.toggle_hidden",
+        ["g\\"] = "actions.toggle_trash",
+        -- Explicitly disable
+        ["<C-h>"] = false,
+        ["<C-j>"] = false,
+        ["<C-k>"] = false,
+        ["<C-l>"] = false,
+			}
     })
 
-    vim.keymap.set("n", "<leader>pv", vim.cmd.Oil, { desc = "Open parent directory"})
-
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "OilEnter",
-      callback = function(args)
-        local oil_dir = vim.api.nvim_buf_get_name(args.buf)
-        local fs_path = oil_dir:gsub('^oil://', ''):gsub('/$', '')
-        if vim.fn.isdirectory(fs_path) == 1 then
-          vim.cmd("cd " .. vim.fn.fnameescape(fs_path))
-        end
-      end,
-    })
   end
 }
