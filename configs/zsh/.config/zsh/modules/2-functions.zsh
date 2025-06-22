@@ -9,3 +9,4 @@ z()   { __zoxide_z "$@"; }
 zi()  { __zoxide_zi "$@"; }
 dc()  { docker compose "$@"; }
 pbcopy() {wl-copy}
+hiber() { systemctl suspend; hyprctl dispatch exec hyprlock }
