@@ -3,7 +3,7 @@ format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$no
 palette = "sholtor_dark"
 
 [c]
-format = "[[ $symbol( $version) ](fg:colour_blue)]($style)"
+format = "[[ $symbol( $version) ](fg:blue)]($style)"
 style = ""
 symbol = " "
 
@@ -156,7 +156,7 @@ style = ""
 symbol = ""
 
 [rust]
-format = "[[ $symbol( $version) ](fg:colour_blue)]($style)"
+format = "[[ $symbol( $version) ](fg:blue)]($style)"
 style = ""
 symbol = ""
 

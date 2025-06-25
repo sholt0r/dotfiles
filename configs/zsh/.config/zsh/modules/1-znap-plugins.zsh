@@ -1,3 +1,5 @@
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+
 plugin_enabled() {
   [[ " ${ZSH_PLUGINS[@]} " == *" $1 "* ]]
 }

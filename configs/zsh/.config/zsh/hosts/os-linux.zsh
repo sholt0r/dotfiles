@@ -16,3 +16,15 @@ bindkey "^[OF" end-of-line
 # Ctrl + Arrow keys
 bindkey "^[[1;5C" forward-word     # Ctrl + →
 bindkey "^[[1;5D" backward-word    # Ctrl + ←
+
+# TMUX Sessionizer
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s '\eh' "tmux-sessionizer -s 0\n"
+bindkey -s '\ej' "tmux-sessionizer -s 1\n"
+bindkey -s '\ek' "tmux-sessionizer -s 2\n"
+bindkey -s '\el' "tmux-sessionizer -s 3\n"
+bindkey -s '\eu' "tmux-sessionizer -s 4\n"
+bindkey -s '\ei' "tmux-sessionizer -s 5\n"
+bindkey -s '\eo' "tmux-sessionizer -s 6\n"
+bindkey -s '\ep' "tmux-sessionizer -s 7\n"
+

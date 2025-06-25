@@ -6,6 +6,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 # Homdir
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
+[[ -d "$HOME/.local/scripts" ]] && PATH="$HOME/.local/scripts:$PATH"
 [[ -d "$HOME/.cargo/bin" ]] && PATH="$HOME/.cargo/bin:$PATH"
 [[ -d "$HOME/.var/app" ]] && PATH="$HOME/.var/app:$PATH"
 [[ -d "$HOME/.local/share/nvim/mason/bin" ]] && PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
