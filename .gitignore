@@ -1,4 +1,5 @@
 **/.DS_STORE
 *.zwc
 *.zwc.old
+.opencode
 configs/gh/.config/gh/hosts.yml
