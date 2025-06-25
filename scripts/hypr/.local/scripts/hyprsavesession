@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hyprctl clients -j | jq -r '.[] | select(.initialClass != "") | .initialClass' > ~/.cache/hypr_session

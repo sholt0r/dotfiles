@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Get the PID of the currently focused window
+pid=$(hyprctl activewindow -j | jq -r '.pid')
+
+# Safety check
+if [[ -n "$pid" && "$pid" =~ ^[0-9]+$ ]]; then
+  pkill -TERM -P "$pid"      # Try killing all children of the window's PID
+  kill -TERM "$pid"          # Also try to kill the window itself
+fi
+

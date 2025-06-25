@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+sleep 0.5
+
+# Monitor geometry (using monitor 0, adjust index if needed)
+monitor_info=$(hyprctl monitors -j | jq '.[0]')
+monitor_x=$(echo "$monitor_info" | jq -r '.x')
+monitor_y=$(echo "$monitor_info" | jq -r '.y')
+monitor_w=$(echo "$monitor_info" | jq -r '.width')
+
+# Padding from top-right corner
+padding_x=20
+padding_y=20
+
+hyprctl clients -j | jq -r '
+  .[] | select(.class == "zen" and (.title | test("Bitwarden Password Manager"))) |
+  .address + " " + (.size[0] | tostring) + " " + (.size[1] | tostring)
+' | while read -r addr win_w win_h; do
+  # Calculate absolute top-right coordinates
+  pos_x=$((monitor_x + monitor_w - win_w - padding_x))
+  pos_y=$((monitor_y + padding_y))
+
+  hyprctl dispatch focuswindow address:$addr
+  hyprctl dispatch togglefloating
+  hyprctl dispatch movewindowpixel exact $pos_x $pos_y
+done
+

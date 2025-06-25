@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+CLASS=$(hyprctl activewindow -j | jq -r '.class')
+
+case "$CLASS" in
+  steam|discord)
+    pkill -f "$CLASS"
+    ;;
+  *)
+    hyprctl dispatch killactive
+    ;;
+esac

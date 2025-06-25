@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if zenity --question title="Confirm Exit" --text="Do you really want to exit?";
+then
+  hyprctl dispatch exit
+fi
