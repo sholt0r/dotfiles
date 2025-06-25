@@ -53,3 +53,7 @@ vim.keymap.set("n", "<leader>rs", function()
   end
   vim.cmd("edit")
 end, { desc = "Restart LSP for buffer" })
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux-sessionizer -s 0 --vsplit<CR>")
+vim.keymap.set("n", "<M-H>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
