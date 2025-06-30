@@ -2,6 +2,6 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install jq stow zsh zoxide
+install jq stow zsh zoxide tmux
 install_with_fallback eza "cargo install eza"
 install_with_fallback starship "curl -sS https://starship.rs/install.sh | sh"
