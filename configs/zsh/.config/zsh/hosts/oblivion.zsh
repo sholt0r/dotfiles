@@ -1,4 +1,5 @@
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin/java"
+export HOST="oblivion"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
