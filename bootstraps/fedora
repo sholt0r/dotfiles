@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname "$0")/../lib/utils.sh"
-
-install jq stow zsh eza zoxide ansible-core curl

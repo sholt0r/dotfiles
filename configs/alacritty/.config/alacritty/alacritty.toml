@@ -11,6 +11,7 @@ dynamic_padding = true
 opacity = 0.88
 blur = true
 padding = { x = 10, y = 10 }
+option_as_alt = "OnlyLeft"
 
 [font]
 size = 16.0

@@ -6,6 +6,7 @@ function style.apply(config)
 	config.tab_bar_at_bottom = true
 	config.window_background_opacity = 0.95
 	config.macos_window_background_blur = 30
+	config.window_decorations = "RESIZE"
 	config.use_resize_increments = false
 	config.adjust_window_size_when_changing_font_size = false
 	config.window_padding = {
