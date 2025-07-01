@@ -4,6 +4,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 export PYENV_ROOT="$HOME/.pyenv"
 
+# Export
+[[ -d "/etc/ssl" ]] && export OPENSSL_DIR="/etc/ssl"
+
 # Homdir
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
 [[ -d "$HOME/.local/scripts" ]] && PATH="$HOME/.local/scripts:$PATH"
