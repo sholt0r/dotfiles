@@ -9,7 +9,7 @@ ZSH_PLUGINS=(
 
 export EDITOR=nvim
 
-bindkey -v
+bindkey -e
 
 # TMUX Sessionizer
 bindkey -s ^f "tmux-sessionizer\n"
