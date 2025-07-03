@@ -1,5 +1,6 @@
 # Config debug messaging
 export DEBUG=false
+export HOST="$(hostname -s)"
 
 # Load shared env vars and flags
 [[ -f "$HOME/.config/zsh/env.zsh" ]] && source "$HOME/.config/zsh/env.zsh"
@@ -16,7 +17,6 @@ esac
 source "$HOME/.config/zsh/hosts/common.zsh"
 
 # Load host-specific config
-HOST="$(hostname -s)"
 HOST_CONFIG="$HOME/.config/zsh/hosts/${HOST}.zsh"
 [[ -f "$HOST_CONFIG" ]] && source "$HOST_CONFIG"
 

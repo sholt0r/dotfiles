@@ -9,3 +9,5 @@
 
 [includeIf "hostname:oblivion"]
   path = /Users/jstaples/.config/git/config-oblivion
+[url "ssh://git@git.kobu.au"]
+	insteadOf = https://git.kobu.au

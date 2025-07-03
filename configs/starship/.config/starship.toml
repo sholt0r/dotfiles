@@ -3,7 +3,7 @@ format = "$os$username$hostname$directory$git_branch$git_status$c$rust$golang$no
 palette = "sholtor_dark"
 
 [c]
-format = "[[ $symbol( $version) ](fg:blue)]($style)"
+format = "[[ $symbol( $version) ](fg:colour_blue)]($style)"
 style = ""
 symbol = " "
 
@@ -67,6 +67,10 @@ symbol = " "
 format = "[[ $symbol( $version) ](fg:colour_blue)]($style)"
 style = ""
 symbol = ""
+
+[kubernetes]
+disabled = false
+format = "[[ $symbol( $context) ](fg:#326ce5)]($style)"
 
 [nodejs]
 format = "[[ $symbol( $version) ](fg:colour_node)]($style)"
