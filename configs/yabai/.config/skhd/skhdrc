@@ -37,6 +37,6 @@ lshift + lcmd - 9 : yabai -m window --space 9 --focus
 lshift + lcmd - 0 : yabai -m window --space 10 --focus
 
 # View
-lcmd - v : yabai -m space --rotate 270
-lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-lcmd - f : yabai -m window --toggle zoom-fullscreen
+lshift + lcmd - v : yabai -m space --rotate 270
+lshift + lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+lshift + lcmd - f : yabai -m window --toggle zoom-fullscreen
