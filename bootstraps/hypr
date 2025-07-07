@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "$(dirname "$0")/../lib/utils.sh"
+
+install inetutils hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent hyprland-qt-support hyprutils dolphin waybar wofi wezterm
+
+[[ -d "$HOME/.pyenv" ]] && curl -fsSL https://pyenv.run | bash
+
+stow -d $HOME/.dotfiles/configs -t $HOME/ hypr wezterm
+stow -d $HOME/.dotfiles/scripts -t $HOME/ hypr util

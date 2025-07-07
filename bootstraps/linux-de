@@ -3,3 +3,5 @@
 source "$(dirname "$0")/../lib/utils.sh"
 
 install wezterm
+
+stow -d $HOME/.dotfiles/configs -t $HOME/ wezterm

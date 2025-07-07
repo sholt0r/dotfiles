@@ -9,6 +9,16 @@ ZSH_PLUGINS=(
 
 export EDITOR=nvim
 
+__trap_exit_tmux() {
+    [[ $(tmux list-windows | wc -l) == 1 ]] || exit
+    [[ $(tmux list-panes | wc -l) == 1 ]] || exit
+    tmux switch-client -t default
+}
+
+if [[ -o interactive ]]; then
+    trap __trap_exit_tmux EXIT
+fi
+
 bindkey -e
 
 # Standard keys
