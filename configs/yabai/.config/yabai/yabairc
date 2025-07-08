@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-sudo yabai --load-sa
 yaba -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-
-# Style
-borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=2.0 &
+sudo yabai --load-sa
 
 # Tiling
 yabai -m config layout bsp
@@ -58,3 +55,6 @@ setup_space 7 seven
 setup_space 8 eight
 setup_space 9 nine
 setup_space 10 ten
+
+# Style
+borders active_color=gradient(top_left=0xff98c379,bottom_right=0xee61afef) inactive_color=0x5c637054 width=2.0 hidpi=true &

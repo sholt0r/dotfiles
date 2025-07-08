@@ -3,6 +3,7 @@ ZSH_PLUGINS=(
   zoxide
   autosuggestions
   syntax
+	completions
   fzf
   starship
 )

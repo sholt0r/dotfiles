@@ -40,3 +40,6 @@ lshift + lcmd - 0 : yabai -m window --space 10 --focus
 lshift + lcmd - v : yabai -m space --rotate 270
 lshift + lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 lshift + lcmd - f : yabai -m window --toggle zoom-fullscreen
+
+# Applications
+lcmd - i : wezterm && yabai -m window --focus latest
