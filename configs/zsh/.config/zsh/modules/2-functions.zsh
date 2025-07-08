@@ -2,7 +2,7 @@ source "$HOME/.dotfiles/lib/utils.sh"
 
 debug "ZSH: Loading functions."
 
-ls()  { eza --icons --group-directories-first "$@"; }
+ls()  { eza --icons --group-directories-first -l "$@"; }
 vi()  { nvim "$@"; }
 vim() { nvim "$@"; }
 z()   { __zoxide_z "$@"; }

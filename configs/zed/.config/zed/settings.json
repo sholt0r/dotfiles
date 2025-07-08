@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "auto_update": true,
+  "icon_theme": "Material Icon Theme",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "GeistMono Nerd Font Mono",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "bottom_dock_layout": "contained",
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "docker-compose": true,
+    "html": true,
+    "svelte": true,
+    "terraform": true,
+    "ruby": true,
+    "toml": true,
+    "lua": true,
+    "swift": true,
+    "basher": true,
+    "proto": true,
+    "templ": true,
+    "ansible": true,
+    "powershell": true,
+    "gitlab-ci-ls": true,
+    "yara": true
+  },
+  "restore_on_startup": "last_session",
+  "edit_predictions_disabled_in": ["comment", "string"],
+  "scrollbar": {
+    "show": "never"
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    },
+    "hunk_style": "unstaged_hollow"
+  },
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim": {
+    "default_mode": "normal",
+    "use_system_clipboard": "on_yank",
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true
+  }
+}

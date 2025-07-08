@@ -2,7 +2,7 @@
 
 source "$(dirname "$0")/../lib/utils.sh"
 
-install inetutils hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent hyprland-qt-support hyprutils dolphin waybar wofi wezterm
+install inetutils hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent hyprland-qt-support hyprshot hyprutils dolphin waybar wofi wezterm
 
 [[ -d "$HOME/.pyenv" ]] && curl -fsSL https://pyenv.run | bash
 
