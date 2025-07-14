@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+
+echo -ne "\033]0;Timer\007"
+
+MINS=${1-"5"}
+
+timer -n Break $MINS"m" -f --format 24h && espeak "Break Over"
