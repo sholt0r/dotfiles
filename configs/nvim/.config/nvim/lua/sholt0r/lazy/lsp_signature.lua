@@ -6,6 +6,7 @@ return {
     handler_opts = {
       border = "rounded"
     },
+		hi_parameter = "LspSignatureActiveParameter",
     doc_lines = 0,
     hint_enable = false,
     floating_window = true,
