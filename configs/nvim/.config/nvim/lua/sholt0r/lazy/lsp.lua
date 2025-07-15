@@ -11,7 +11,7 @@ return {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 		'rafamadriz/friendly-snippets',
-    { 'samiulsami/cmp-go-deep', dependencies = { 'kkharji/sqlite.lua' } },
+    --{ 'samiulsami/cmp-go-deep', dependencies = { 'kkharji/sqlite.lua' } },
     'j-hui/fidget.nvim',
   },
 
@@ -29,6 +29,31 @@ return {
 		require('luasnip.loaders.from_vscode').lazy_load()
 
     local server_settings = {
+			ansiblels = {
+				capabilities = capabilities,
+				filetypes = {
+					"yaml.ansible",
+					"inventory.yaml",
+					"asb.yaml"
+				}
+			},
+
+			gopls = {
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+						completionDocumentation = false,
+						deepCompletion = false,
+						fuzzyMatching = false,
+					}
+				}
+			},
+
       lua_ls = {
         capabilities = capabilities,
         settings = {
@@ -36,10 +61,6 @@ return {
             runtime = {
               version = 'LuaJIT',
               path = vim.split(package.path, ';'),
-            },
-            diagnostics = {
-              globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
-              filetypes = { 'lua', 'nse' }
             },
             workspace = {
               library = vim.api.nvim_get_runtime_file('', true),
@@ -65,22 +86,6 @@ return {
         cmd = { "typescript-language-server", "--stdio" },
       },
 
-      yamlls = {
-        capabilities = capabilities,
-        settings = {
-          yaml = {
-            validate = true,
-            schemaStore = {
-              enable = false,
-              url = "",
-            },
-            schemas = {
-              ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook'] = 'playbook.{yml,yaml}',
-              ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks'] = 'tasks.{yml,yaml}',
-            }
-          }
-        }
-      },
     }
 
 
@@ -127,14 +132,23 @@ return {
 
 
     cmp.setup({
+			performance = {
+				debounce = 60,
+				throttle = 30,
+				fetching_timeout = 500,
+			},
       snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
       },
-			preselect = cmp.PreselectMode.Item,
+			preselect = cmp.PreselectMode.None,
 			completion = {
-				completeopt = 'menu,menuone,noinsert'
+				completeopt = 'menu,menuone,noselect',
+				keyword_length = 2,
+			},
+			experimental = {
+				ghost_text = false,
 			},
       mapping = cmp.mapping.preset.insert({
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -146,8 +160,8 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
       }, {
-        { name = 'go_deep'},
-        { name = 'buffer' },
+        { name = 'go_deep', keyword_length = 3},
+        { name = 'buffer', keyword_length = 3},
       })
     })
 
