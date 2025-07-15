@@ -4,6 +4,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
 export PYENV_ROOT="$HOME/.pyenv"
 
+tpm_lib="$(p11-kit list-modules 2>/dev/null | grep -A1 'module: tpm2_pkcs11' | tail -n1 | sed 's/.*path: //g')"
+export GPG_TPM2_PKCS11_MODULE=$tpm_lib
+
 # Export
 [[ -d "/etc/ssl" ]] && export OPENSSL_DIR="/etc/ssl"
 

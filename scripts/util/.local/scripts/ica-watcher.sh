@@ -6,7 +6,7 @@ NOTIFY_BIN="/usr/bin/notify-send"
 USER_ID=$(id -u)
 DBUS_ENV="unix:path=/run/user/$USER_ID/bus"
 
-export DISPLAY=:0
+export DISPLAY=:1
 export DBUS_SESSION_BUS_ADDRESS="$DBUS_ENV"
 export XDG_RUNTIME_DIR="/run/user/$USER_ID"
 

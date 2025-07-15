@@ -2,6 +2,6 @@
 
 echo -ne "\033]0;Timer\007"
 
-MINS=${1-"25"}
+MINS=${1-"30"}
 
 timer -n Work $MINS"m" -f --format 24h && espeak "Work Over"
