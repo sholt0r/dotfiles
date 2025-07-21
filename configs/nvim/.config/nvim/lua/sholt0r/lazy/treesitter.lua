@@ -23,6 +23,7 @@ return {
           "jq",
           "json",
           "lua",
+					"markdown",
           "passwd",
           "pem",
           "perl",
