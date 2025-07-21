@@ -1,3 +1,15 @@
+ZSH_PLUGINS=(
+  git
+  zoxide
+  autosuggestions
+  syntax
+	completions
+  fzf
+  starship
+	ssh-agent
+	pyenv
+)
+
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/bin/java"
 
 # >>> conda initialize >>>

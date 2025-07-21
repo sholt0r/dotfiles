@@ -34,6 +34,3 @@ done
 }
 
 PATH=~/.console-ninja/.bin:$PATH
-
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
