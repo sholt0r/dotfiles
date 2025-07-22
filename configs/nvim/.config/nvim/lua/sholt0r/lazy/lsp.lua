@@ -27,88 +27,6 @@ return {
     require('mason').setup()
 		require('luasnip.loaders.from_vscode').lazy_load()
 
-    local server_settings = {
-			ansiblels = {
-				capabilities = capabilities,
-				filetypes = {
-					"yaml.ansible",
-					"yaml"
-				},
-				settings = {
-					ansible = {
-						validation = true,
-						lint = {
-							enabled = true,
-							path = "ansible-lint"
-						}
-					},
-					completion = {
-						provideRedirectModules = true,
-						provideModuleOptionAliases = true
-					}
-				}
-			},
-
-			gopls = {
-				capabilities = capabilities,
-				settings = {
-					gopls = {
-						analyses = {
-							unusedparams = true,
-						},
-						staticcheck = true,
-						gofumpt = true,
-						completionDocumentation = false,
-						deepCompletion = false,
-						fuzzyMatching = false,
-					}
-				}
-			},
-
-      lua_ls = {
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            runtime = {
-              version = 'LuaJIT',
-              path = vim.split(package.path, ';'),
-            },
-						workspace = {
-              library = vim.api.nvim_get_runtime_file('', true),
-              checkThirdParty = false,
-              maxPreload = 100000,
-              preloadFileSize = 10000,
-            },
-            completion = {
-              callSnippet = 'Replace',
-              keywordSnippet = 'Disable',
-              showWord = 'Disable',
-              workspaceWord = false,
-            },
-            diagnostics = {
-              workspaceDelay = 3000,
-              workspaceRate = 100,
-            },
-            telemetry = {
-              enable = false,
-            },
-          }
-        }
-      },
-
-      ts_ls = {
-        capabilities = capabilities,
-        root_dir = function(fname)
-            local util = require('lspconfig.util')
-            local root = util.root_pattern("tsconfig.json", "package.json")(fname)
-            return root
-        end,
-        cmd = { "typescript-language-server", "--stdio" },
-      },
-
-    }
-
-
     require('mason-lspconfig').setup({
       ensure_installed = {
         'ansiblels',
@@ -132,7 +50,7 @@ return {
         'terraformls',
         'ts_ls',
         'lemminx',
-        --'yamlls',
+        'yamlls',
         'zls',
       },
       handlers = {
@@ -141,10 +59,91 @@ return {
             'force',
             {
               capabilities = capabilities,
-            },
-            server_settings[server_name] or {}
+            }
           ))
         end,
+				ansiblels = function()
+					require('lspconfig').ansiblels.setup({
+						capabilities = capabilities,
+						filetypes = {
+							"yaml.ansible",
+							"yaml"
+						},
+						settings = {
+							ansible = {
+								validation = true,
+								lint = {
+									enabled = true,
+									path = "ansible-lint"
+								}
+							},
+							completion = {
+								provideRedirectModules = true,
+								provideModuleOptionAliases = true
+							}
+						}
+					})
+				end,
+				gopls = function()
+					require('lspconfig').gopls.setup({
+						capabilities = capabilities,
+						settings = {
+							gopls = {
+								analyses = {
+									unusedparams = true,
+								},
+								staticcheck = true,
+								gofumpt = true,
+								completionDocumentation = false,
+								deepCompletion = false,
+								fuzzyMatching = false,
+							}
+						}
+					})
+				end,
+				lua_ls = function()
+					require('lspconfig').lua_ls.setup({
+						capabilities = capabilities,
+						settings = {
+							Lua = {
+								runtime = {
+									version = 'LuaJIT',
+									path = vim.split(package.path, ';'),
+								},
+								workspace = {
+									library = vim.api.nvim_get_runtime_file('', true),
+									checkThirdParty = false,
+									maxPreload = 100000,
+									preloadFileSize = 10000,
+								},
+								completion = {
+									callSnippet = 'Replace',
+									keywordSnippet = 'Disable',
+									showWord = 'Disable',
+									workspaceWord = false,
+								},
+								diagnostics = {
+									workspaceDelay = 3000,
+									workspaceRate = 100,
+								},
+								telemetry = {
+									enable = false,
+								},
+							}
+						}
+					})
+				end,
+				ts_ls = function()
+					require('lspconfig').ts_ls.setup({
+						capabilities = capabilities,
+						root_dir = function(fname)
+								local util = require('lspconfig.util')
+								local root = util.root_pattern("tsconfig.json", "package.json")(fname)
+								return root
+						end,
+						cmd = { "typescript-language-server", "--stdio" },
+					})
+				end,
       }
     })
 
@@ -202,6 +201,15 @@ return {
       end,
       group = format_sync_grp
     })
+
+		vim.keymap.set("n", "<leader>dr", function()
+			local clients = vim.lsp.get_clients({ name = "ansiblels" })
+			for _, client in pairs(clients) do
+				print("LSP: " .. client.name)
+				print("Filetypes: " .. vim.inspect(client.config.filetypes))
+				print("Root: " .. (client.config.root_dir or "none"))
+			end
+		end)
 
   end -- Config end
 }
