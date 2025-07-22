@@ -11,7 +11,6 @@ return {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 		'rafamadriz/friendly-snippets',
-    --{ 'samiulsami/cmp-go-deep', dependencies = { 'kkharji/sqlite.lua' } },
     'j-hui/fidget.nvim',
   },
 
@@ -32,23 +31,9 @@ return {
 			ansiblels = {
 				capabilities = capabilities,
 				filetypes = {
-					"yaml.ansible"
+					"yaml.ansible",
+					"yaml"
 				},
-				root_dir = function(fname)
-					local util = require('lspconfig.util')
-					return util.root_pattern(
-						'ansible.cfg',
-						'.ansible-lint',
-						'playbook.yml',
-            'playbook.yaml',
-            'site.yml', 
-            'site.yaml',
-            'inventory',
-            'roles/',
-            'group_vars/',
-            'host_vars/'
-					)(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
-				end,
 				settings = {
 					ansible = {
 						validation = true,
@@ -147,7 +132,7 @@ return {
         'terraformls',
         'ts_ls',
         'lemminx',
-        'yamlls',
+        --'yamlls',
         'zls',
       },
       handlers = {
