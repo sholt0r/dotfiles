@@ -32,9 +32,35 @@ return {
 			ansiblels = {
 				capabilities = capabilities,
 				filetypes = {
-					"yaml.ansible",
-					"inventory.yaml",
-					"asb.yaml"
+					"yaml.ansible"
+				},
+				root_dir = function(fname)
+					local util = require('lspconfig.util')
+					return util.root_pattern(
+						'ansible.cfg',
+						'.ansible-lint',
+						'playbook.yml',
+            'playbook.yaml',
+            'site.yml', 
+            'site.yaml',
+            'inventory',
+            'roles/',
+            'group_vars/',
+            'host_vars/'
+					)(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+				end,
+				settings = {
+					ansible = {
+						validation = true,
+						lint = {
+							enabled = true,
+							path = "ansible-lint"
+						}
+					},
+					completion = {
+						provideRedirectModules = true,
+						provideModuleOptionAliases = true
+					}
 				}
 			},
 
@@ -62,12 +88,21 @@ return {
               version = 'LuaJIT',
               path = vim.split(package.path, ';'),
             },
-            workspace = {
+						workspace = {
               library = vim.api.nvim_get_runtime_file('', true),
               checkThirdParty = false,
+              maxPreload = 100000,
+              preloadFileSize = 10000,
             },
             completion = {
               callSnippet = 'Replace',
+              keywordSnippet = 'Disable',
+              showWord = 'Disable',
+              workspaceWord = false,
+            },
+            diagnostics = {
+              workspaceDelay = 3000,
+              workspaceRate = 100,
             },
             telemetry = {
               enable = false,
