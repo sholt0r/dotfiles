@@ -17,11 +17,7 @@ return {
   config = function()
     local cmp = require('cmp')
     local cmp_lsp = require('cmp_nvim_lsp')
-    local capabilities = vim.tbl_deep_extend(
-    'force',
-    {},
-    vim.lsp.protocol.make_client_capabilities(),
-    cmp_lsp.default_capabilities())
+    local capabilities = vim.tbl_deep_extend('force', {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
     require('fidget').setup({})
     require('mason').setup()
@@ -37,7 +33,6 @@ return {
         'docker_compose_language_service',
         'gopls',
         'html',
-        'htmx',
         'jsonls',
         'lua_ls',
         'perlnavigator',
@@ -201,15 +196,6 @@ return {
       end,
       group = format_sync_grp
     })
-
-		vim.keymap.set("n", "<leader>dr", function()
-			local clients = vim.lsp.get_clients({ name = "ansiblels" })
-			for _, client in pairs(clients) do
-				print("LSP: " .. client.name)
-				print("Filetypes: " .. vim.inspect(client.config.filetypes))
-				print("Root: " .. (client.config.root_dir or "none"))
-			end
-		end)
 
   end -- Config end
 }

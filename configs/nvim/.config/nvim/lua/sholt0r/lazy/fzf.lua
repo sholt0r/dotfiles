@@ -19,7 +19,7 @@ return {
 
 			local current_file = vim.fn.expand('%:p:h')
 			if current_file == '' then
-				current_file = vim.loop.cwd()
+				current_file = vim.fn.getcwd()
 			end
 
 			local function find_root(path)
@@ -31,7 +31,7 @@ return {
 
 				local parent = vim.fn.fnamemodify(path, ':h')
 				if parent == path then
-					return vim.loop.cwd()
+					return vim.fn.getcwd()
 				end
 
 				return find_root(parent)
@@ -70,7 +70,7 @@ return {
     vim.keymap.set("n", "<C-p>", function()
 			local current_dir = vim.fn.expand('%:p:h')
 			if current_dir == '' then
-				current_dir = vim.loop.cwd()
+				current_dir = vim.fn.getcwd()
 			end
 			local git_root = vim.fn.systemlist("git -C " .. current_dir .. " rev-parse --show-toplevel 2>/dev/null")[1]
 			if git_root and git_root ~= "" and vim.v.shell_error == 0 then
