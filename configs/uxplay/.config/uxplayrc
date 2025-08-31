@@ -1,0 +1,11 @@
+n Conqueror
+nh
+vs "glimagesink"
+vd nvh264dec
+vd nvh265dec
+h265
+fs
+ca cover
+hls
+s 2560x1440
+fps 60

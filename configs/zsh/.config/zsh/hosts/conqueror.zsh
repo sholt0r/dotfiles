@@ -11,4 +11,7 @@ ZSH_PLUGINS=(
 )
 
 pbcopy() {wl-copy}
-hiber() { systemctl suspend; hyprctl dispatch exec hyprlock }
+hiber() { hyprctl dispatch exec hyprlock & sleep 1s && systemctl suspend }
+
+
+source /usr/share/nvm/init-nvm.sh

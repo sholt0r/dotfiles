@@ -10,6 +10,5 @@ plugin_enabled syntax           && znap source zsh-users/zsh-syntax-highlighting
 plugin_enabled completions			&& znap source zsh-users/zsh-completions
 plugin_enabled fzf              && znap eval fzf 'fzf --ssh'
 plugin_enabled starship         && znap eval starship 'starship init zsh --print-full-init'
-plugin_enabled ssh-agent 				&& znap eval ssh-agent 'ssh-agent -s' > /dev/null
-plugin_enabled pyenv 						&& znap eval "$(pyenv init - zsh)"
-plugin_enabled pyenv 						&& znap eval "$(pyenv virtualenv-init -)"
+plugin_enabled pyenv 						&& if [ -d ~/.pyenv ]; then eval "$(pyenv init - zsh)"; else; curl -fsSL https://pyenv.run | bash; fi
+plugin_enabled pyenv 						&& eval "$(pyenv virtualenv-init -)"
