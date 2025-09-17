@@ -15,7 +15,7 @@ function style.apply(config)
 		top = 10,
 		bottom = 10
 	}
-	config.font_size = 16.0
+	config.font_size = 13
 	config.color_scheme = 'OneHalfDark'
 	config.default_cursor_style = 'BlinkingBar'
 end
