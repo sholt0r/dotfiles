@@ -4,10 +4,17 @@
 [init]
 	defaultBranch = main
 
+[merge]
+    tool = nvimdiff
+
+[mergetool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE" "$MERGED" -c 'wincmd w' -c 'wincmd J'
+
 [includeIf "hostname:conqueror"]
   path = /home/jstaples/.config/git/config-conqueror
 
 [includeIf "hostname:oblivion"]
   path = /Users/jstaples/.config/git/config-oblivion
+
 [url "ssh://git@git.kobu.au"]
 	insteadOf = https://git.kobu.au
